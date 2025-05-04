@@ -1,0 +1,13 @@
+/* Custom styles to complement Tailwind */
+.container {
+    transition: all 0.3s ease;
+}
+
+#feedback-modal {
+    z-index: 1000;
+}
+
+#feedback-modal .bg-white {
+    max-height: 80vh;
+    overflow-y: auto;
+}
