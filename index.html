@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Psychology MCQ Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="container bg-white p-6 rounded-lg shadow-lg max-w-2xl w-full">
+        <h1 class="text-2xl font-bold text-center mb-4">Psychology MCQ Quiz</h1>
+        <label for="subject-select" class="block text-lg mb-2">Select Subject:</label>
+        <select id="subject-select" class="w-full p-2 mb-4 border rounded" onchange="loadSubject()">
+            <option value="Cognitive Psychology">Cognitive Psychology</option>
+            <option value="Biological Psychology">Biological Psychology</option>
+            <option value="Abnormal Psychology">Abnormal Psychology</option>
+            <option value="Developmental Psychology">Developmental Psychology</option>
+            <option value="Research Methodology">Research Methodology</option>
+        </select>
+        <div id="question-container" class="mb-4">
+            <h3 id="question-text" class="text-lg font-semibold mb-2"></h3>
+            <form id="quiz-form">
+                <div class="mb-2"><input type="radio" name="option" value="0" class="mr-2"><label id="option0"></label></div>
+                <div class="mb-2"><input type="radio" name="option" value="1" class="mr-2"><label id="option1"></label></div>
+                <div class="mb-2"><input type="radio" name="option" value="2" class="mr-2"><label id="option2"></label></div>
+                <div class="mb-2"><input type="radio" name="option" value="3" class="mr-2"><label id="option3"></label></div>
+                <button type="button" onclick="checkAnswer()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full mt-4">Submit Answer</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal for Feedback -->
+    <div id="feedback-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="bg-white p-6 rounded-lg max-w-lg w-full">
+            <h2 id="feedback-title" class="text-xl font-bold mb-4"></h2>
+            <p id="feedback-text" class="mb-4"></p>
+            <button onclick="closeModal()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Next Question</button>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
